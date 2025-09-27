@@ -32,7 +32,7 @@ namespace OE.ALGA.Paradigmak
         {
             if (n + 1 > tarolo.Length) throw new TaroloMegteltKivetel();
             n++;
-            tarolo[n-1] = elem;
+            tarolo[n - 1] = elem;
         }
 
         public virtual void MindentVegrehajt()
@@ -46,7 +46,7 @@ namespace OE.ALGA.Paradigmak
             new FeladatTaroloBejaro<T>(tarolo, n);
     }
 
-    public class FuggoFeladatTarolo<T> : FeladatTarolo<T> where T: IFuggo, IVegrehajthato 
+    public class FuggoFeladatTarolo<T> : FeladatTarolo<T> where T : IFuggo, IVegrehajthato
     {
         public FuggoFeladatTarolo(int meret) : base(meret)
         {
@@ -60,12 +60,12 @@ namespace OE.ALGA.Paradigmak
                 {
                     if (tarolo[i].FuggosegTeljesul)
                     {
-                        tarolo[i].Vegrehajtas();   
+                        tarolo[i].Vegrehajtas();
                     }
                 }
             }
         }
-        
+
     }
 
     public class FeladatTaroloBejaro<T> : IEnumerator<T> where T : IVegrehajthato
@@ -86,22 +86,21 @@ namespace OE.ALGA.Paradigmak
             return true;
         }
 
-        public void Reset() => 
+        public void Reset() =>
             _aktualisIndex = -1;
         object? IEnumerator.Current
         {
             get { return Current; }
         }
 
-        public T Current => 
+        public T Current =>
             _tarolo[_aktualisIndex];
 
         public void Dispose()
         {
-            
         }
     }
-    
+
 
     public class TaroloMegteltKivetel : Exception
     {
