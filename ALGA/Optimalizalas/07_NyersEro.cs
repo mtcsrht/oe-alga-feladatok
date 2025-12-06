@@ -30,9 +30,9 @@ namespace OE.ALGA.Optimalizalas
             }
             return osszSuly;
         }
-        public double OsszErtek(bool[] pakolas)
+        public float OsszErtek(bool[] pakolas)
         {
-            double osszErtek = 0;
+            float osszErtek = 0;
             for (int i = 0; i < n; i++)
             {
                 if (pakolas[i])
